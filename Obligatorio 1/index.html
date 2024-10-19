@@ -2,77 +2,83 @@
 <html lang="es">
 
 <head>
+
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/estilos.css">
   <title>Obligatorio 1</title>
-</head>
+  <link rel="stylesheet" href="styles.css">
 
+</head>
 <body>
-  <h1>Museo de Arte</h1>
-  <h4>Trabajo realizado por <a href="https://www.linkedin.com/in/ignacio-badano-silva-02939026b/">Ignacio Badano (320966)</a><a>Francisco Morales (281497)</a></h4>
-  <form id="idColores"></form>
-  <input type="button" form="#idColores" value="Colores"> 
-  <h3>Ingresos</h3>
-  <h3>Registrar Artistas</h3>
-  <label for="idNombre">Nombre:</label>
-  <input type="text" id="idNombre" name="nombre">
-  <label for="idEdad">Edad:</label>
-  <input type="text" id="idEdad" name="edad">
-  <label for="idEstilo">Estilo:</label>
-  <textarea rows="2" id="idEstilo" name="estilo"></textarea>
-  <input type="button" value="Agregar Artista">
-  
-  
-  <h3>Ingresar Exposiciones</h3>
-  <label for="idTitulo">Titulo:</label>
-  <input type="text" id="idTitulo" name="titulo">
-  <label for="idFecha">Fecha de comienzo:</label>
-  <input type="date" id="idFecha" name="fecha">
-  <label for="idDescripcion">Descripcion:</label>
-  <textarea rows="2" id="idDescripcion" name="descripcion"></textarea>
-  <br>
-  <br>
-  <label for="idElegir">Elegir artista:</label>
-  <select id="idElegir" name="elegir">
-    <option>Nombre 1</option>
-    <option>Nombre 2</option>
-    <option>Nombre 3</option>
-  </select>
-  <input type="button" value=">>" name="derecha">
-  <input type="button" value="<<" name="izquierda">
-  <select id="idElegir" name="elegir2">
-    <option>Nombre 4</option>
-    <option>Nombre 5</option>
-  </select>
-  <br>
-  <br>
-  <input type="button" value="Agregar Exposicion" name="agregar">
-  <h3>Comentarios de Visitas</h3>
-  <label for="idExposicion">Exposicion</label>
-  <select id="idExposicion" name="exposicion">
-    <option>Titulo 1</option>
-  </select>
-  <br>
-  <label for="idVisitante">Nombre del visitante:</label>
-  <input type="text" id="idVisitante" name="visitante">
-  <label for="idComentario">Comentario:</label>
-  <textarea id="idComentario" rows="2" name="comentario"></textarea>
-  <label for="idClasificacion">Clasificacion:</label>
-  
-  <div>
-    <input id="idRojo" type="radio" name="rojo"><label id="idRojo">Rojo</label><img src="img/Rojo.jpeg" >
-    <input id="idNaranja" type="radio" name="naranja"><label id="idNaranja">Naranja</label><img src="img/Naranja.jpeg" >
-    <input id="idAmarillo" type="radio" name="amarillo"><label id="idAmarillo">Amarillo</label><img src="img/Amarillo.jpeg" >
-    <input id="idLima" type="radio" name="Lima"><label id="idVerde">Lima</label><img src="img/Lima.jpeg" >
-    <input id="idVerde" type="radio" name="verde"><label id="idVerde">Verde</label><img src="img/Verde.jpeg" >
+  <div class="Museo-Del-Arte">
+    <h1>Museo de Arte</h1>
+    <h4>Trabajo realizado por <a href="https://www.linkedin.com/in/ignacio-badano-silva-02939026b/">Ignacio Badano (320966)</a> <a>y</a> <a href="https://www.linkedin.com/in/francisco-morales-082588333/">Francisco Morales (281497)</a></h4>
+    <form id="idColores"></form>
+    <input type="button" form="#idColores" value="Colores"> 
   </div>
-<div>
-  <input id="idVisita" type="radio" name="visita"><label id="idVisita">Hice visita guiada</label>
+  <div class="Ingresos">
+    <div>
+      <h3>Ingresos</h3>
+      <h3>Registrar Artistas</h3>
+      <label for="idNombre">Nombre:</label>
+      <input type="text" id="idNombre" name="nombre">
+      <label for="idEdad">Edad:</label>
+      <input type="text" id="idEdad" name="edad">
+      <label for="idEstilo">Estilo:</label>
+      <textarea rows="2" id="idEstilo" name="estilo"></textarea>
+      <input type="button" value="Agregar Artista">
+    </div>
+    <div>
+      <h3>Ingresar Exposiciones</h3>
+      <label for="idTitulo">Titulo:</label>
+      <input type="text" id="idTitulo" name="titulo">
+      <label for="idFecha">Fecha de comienzo:</label>
+      <input type="date" id="idFecha" name="fecha">
+      <label for="idDescripcion">Descripcion:</label>
+      <textarea rows="2" id="idDescripcion" name="descripcion"></textarea>
+      <br>
+      <br>
+      <label for="idElegir">Elegir artista:</label>
+    <select id="idElegir" name="elegir">
+        <option>Nombre 1</option>
+        <option>Nombre 2</option>
+        <option>Nombre 3</option>
+      </select>
+      <input type="button" value=">>" name="derecha">
+      <input type="button" value="<<" name="izquierda">
+      <select id="idElegir" name="elegir2">
+        <option>Nombre 4</option>
+        <option>Nombre 5</option>
+      </select>
+      <br>
+      <br>
+      <input type="button" value="Agregar Exposicion" name="agregar">
+    </div>
+    <div>
+        <h3>Comentarios de Visitas</h3>
+        <label for="idExposicion">Exposicion</label>
+        <select id="idExposicion" name="exposicion">
+          <option>Titulo 1</option>
+        </select>
+        <br>
+        <label for="idVisitante">Nombre del visitante:</label>
+        <input type="text" id="idVisitante" name="visitante">
+        <label for="idComentario">Comentario:</label>
+        <textarea id="idComentario" rows="2" name="comentario"></textarea>
+        <label for="idClasificacion">Clasificacion:</label>
+   
+      <input id="idRojo" type="radio" name="rojo"><label id="idRojo"></label><img src="img/Rojo.jpeg" >
+      <input id="idNaranja" type="radio" name="naranja"><label id="idNaranja"></label><img src="img/Naranja.jpeg" >
+      <input id="idAmarillo" type="radio" name="amarillo"><label id="idAmarillo"></label><img src="img/Amarillo.jpeg" >
+      <input id="idLima" type="radio" name="Lima"><label id="idVerde"></label><img src="img/Lima.jpeg" >
+      <input id="idVerde" type="radio" name="verde"><label id="idVerde"></label><img src="img/Verde.jpeg" >
+  
+    <input id="idVisita" type="radio" name="visita"><label id="idVisita">Hice visita guiada</label>
+ 
+    <input type="button" value="Agregar Comentario" name="comentario">
  </div>
-<div>
-  <input type="button" value="Agregar Comentario" name="comentario">
- </div>
+</div>
+ <div class="Informacion-General">
   <h3>Informacion General</h3>
   <p>Titulo de la/s Exposicion/es con mas artistas:</p>
   <ul>
@@ -119,5 +125,6 @@
       </tr>
     </tbody>
   </table>
+ </div>
 </body>
 </html>
