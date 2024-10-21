@@ -6,22 +6,20 @@
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obligatorio 1</title>
-  <link rel="stylesheet" href="estilos.css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
-
 <body>
-  <form class="Museo-Del-Arte">
+  <div class="Museo-Del-Arte">
     <h1>Museo de Arte</h1>
-    <h4>Trabajo realizado por <a href="https://www.linkedin.com/in/ignacio-badano-silva-02939026b/">Ignacio Badano
-        (320966)</a> <a>y</a> <a href="https://www.linkedin.com/in/francisco-morales-082588333/">Francisco Morales
-        (281497)</a></h4>
-    <input type="button" form="#idColores" value="Colores">
-  </form>
-  <form class="Ingresos">
-    <section>
+    <h4>Trabajo realizado por <a href="https://www.linkedin.com/in/ignacio-badano-silva-02939026b/">Ignacio Badano (320966)</a> <a>y</a> <a href="https://www.linkedin.com/in/francisco-morales-082588333/">Francisco Morales (281497)</a></h4>
+    <form id="idColores"></form>
+    <input type="button" form="#idColores" value="Colores"> 
+  </div>
+  <div class="Ingresos">
+    <div>
       <h3>Ingresos</h3>
-      <h3>Registrar Artistas</h3>
+      <h3>Registrar Artistas</h3> 
       <label for="idNombre">Nombre:</label>
       <input type="text" id="idNombre" name="nombre">
       <label for="idEdad">Edad:</label>
@@ -29,8 +27,8 @@
       <label for="idEstilo">Estilo:</label>
       <textarea rows="2" id="idEstilo" name="estilo"></textarea>
       <input type="button" value="Agregar Artista">
-    </section>
-    <section>
+    </div>
+    <div>
       <h3>Ingresar Exposiciones</h3>
       <label for="idTitulo">Titulo:</label>
       <input type="text" id="idTitulo" name="titulo">
@@ -41,7 +39,7 @@
       <br>
       <br>
       <label for="idElegir">Elegir artista:</label>
-      <select id="idElegir" name="elegir">
+    <select id="idElegir" name="elegir">
         <option>Nombre 1</option>
         <option>Nombre 2</option>
         <option>Nombre 3</option>
@@ -55,79 +53,78 @@
       <br>
       <br>
       <input type="button" value="Agregar Exposicion" name="agregar">
-    </section>
-    <section>
-      <h3>Comentarios de Visitas</h3>
-      <label for="idExposicion">Exposicion</label>
-      <select id="idExposicion" name="exposicion">
-        <option>Titulo 1</option>
-      </select>
-      <br>
-      <label for="idVisitante">Nombre del visitante:</label>
-      <input type="text" id="idVisitante" name="visitante">
-      <label for="idComentario">Comentario:</label>
-      <textarea id="idComentario" rows="2" name="comentario"></textarea>
-      <label for="idClasificacion">Clasificacion:</label>
-
-      <input id="idRojo" type="radio" name="rojo"><label id="idRojo"></label><img src="img/Rojo.jpeg">
-      <input id="idNaranja" type="radio" name="naranja"><label id="idNaranja"></label><img src="img/Naranja.jpeg">
-      <input id="idAmarillo" type="radio" name="amarillo"><label id="idAmarillo"></label><img src="img/Amarillo.jpeg">
-      <input id="idLima" type="radio" name="Lima"><label id="idVerde"></label><img src="img/Lima.jpeg">
-      <input id="idVerde" type="radio" name="verde"><label id="idVerde"></label><img src="img/Verde.jpeg">
-
-      <input id="idVisita" type="radio" name="visita"><label id="idVisita">Hice visita guiada</label>
-
-      <input type="button" value="Agregar Comentario" name="comentario">
-  </form>
-  </section>
-  <section class="Informacion-General">
-    <h3>Informacion General</h3>
-    <p>Titulo de la/s Exposicion/es con mas artistas:</p>
-    <ul>
-      <li>Datos ficticios 1</li>
-      <li>Datos ficticios 2</li>
-    </ul>
-    <p>Titulo y fecha de la/s Exposiciones sin comentarios: (ordenadas por fecha creciente)</p>
-    <ul>
-      <li>Datos ficticios 1</li>
-      <li>Datos ficticios 2</li>
-    </ul>
-    <h3>Informacion de Comentarios</h3>
-    <label for="idExposicion">Exposicion:</label>
-    <select id="idExposicion" name="exposicion">
-      <option>Todas</option>
-    </select>
-    <table>
-      <thead>
-        <tr>
-          <th>Titulo</th>
-          <th>Mas datos</th>
-          <th>Nombre</th>
-          <th>Comentario</th>
-          <th>Guiada</th>
-          <th><input type="button" value="Calificacion creciente" name="creciente"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Titulo 1</td>
-          <td><input type="button" value="Ampliar" name="ampliar"></td>
-          <td>Nombre ficticio 1</td>
-          <td>Comentario ficticio 1</td>
-          <td>NO</td>
-          <td><img src="img/Rojo.jpeg"></td>
-        </tr>
-        <tr>
-          <td>Titulo 2</td>
-          <td><input type="button" value="Ampliar" name="ampliar"></td>
-          <td>Nombre ficticio 2</td>
-          <td>Comentario ficticio 2</td>
-          <td>SI</td>
-          <td><img src="img/Verde.jpeg"></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    </div>
+    <div>
+        <h3>Comentarios de Visitas</h3>
+        <label for="idExposicion">Exposicion</label>
+        <select id="idExposicion" name="exposicion">
+          <option>Titulo 1</option>
+        </select>
+        <br>
+        <label for="idVisitante">Nombre del visitante:</label>
+        <input type="text" id="idVisitante" name="visitante">
+        <label for="idComentario">Comentario:</label>
+        <textarea id="idComentario" rows="2" name="comentario"></textarea>
+        <label for="idClasificacion">Clasificacion:</label>
+   
+      <input id="idRojo" type="radio" name="rojo"><label id="idRojo"></label><img src="img/Rojo.jpeg" >
+      <input id="idNaranja" type="radio" name="naranja"><label id="idNaranja"></label><img src="img/Naranja.jpeg" >
+      <input id="idAmarillo" type="radio" name="amarillo"><label id="idAmarillo"></label><img src="img/Amarillo.jpeg" >
+      <input id="idLima" type="radio" name="Lima"><label id="idVerde"></label><img src="img/Lima.jpeg" >
+      <input id="idVerde" type="radio" name="verde"><label id="idVerde"></label><img src="img/Verde.jpeg" >
+  
+    <input id="idVisita" type="radio" name="visita"><label id="idVisita">Hice visita guiada</label>
+ 
+    <input type="button" value="Agregar Comentario" name="comentario">
+ </div>
+</div>
+ <div class="Informacion-General">
+  <h3>Informacion General</h3>
+  <p>Titulo de la/s Exposicion/es con mas artistas:</p>
+  <ul>
+    <li>Datos ficticios 1</li>
+    <li>Datos ficticios 2</li>
+  </ul>
+  <p>Titulo y fecha de la/s Exposiciones sin comentarios: (ordenadas por fecha creciente)</p>
+  <ul>
+    <li>Datos ficticios 1</li>
+    <li>Datos ficticios 2</li>
+  </ul>
+  <h3>Informacion de Comentarios</h3>
+  <label for="idExposicion">Exposicion:</label>
+  <select id="idExposicion" name="exposicion">
+    <option>Todas</option>
+  </select>
+  <table>
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Mas datos</th>
+        <th>Nombre</th>
+        <th>Comentario</th>
+        <th>Guiada</th>
+        <th><input type="button" value="Calificacion creciente" name="creciente"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Titulo 1</td>
+        <td><input type="button" value="Ampliar" name="ampliar"></td>
+        <td>Nombre ficticio 1</td>
+        <td>Comentario ficticio 1</td>
+        <td>NO</td>
+        <td><img src="img/Rojo.jpeg" ></td>
+      </tr>
+      <tr>
+        <td>Titulo 2</td>
+        <td><input type="button" value="Ampliar" name="ampliar"></td>
+        <td>Nombre ficticio 2</td>
+        <td>Comentario ficticio 2</td>
+        <td>SI</td>
+        <td><img src="img/Verde.jpeg"></td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
 </body>
-
 </html>
