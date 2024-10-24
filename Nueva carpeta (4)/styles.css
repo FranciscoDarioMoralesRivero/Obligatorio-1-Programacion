@@ -1,0 +1,84 @@
+/* Estilos comunes */
+body{
+    background-color: #ececf4;
+}
+.Museo-Del-Arte, .Ingresos, .Informacion-General {
+    background-color: rgb(152, 251, 152);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Ingresos, .Informacion-General {
+    border-radius: 15px;
+}
+
+.Museo-Del-Arte {
+    text-align: center;
+}
+
+.Ingresos {
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.Informacion-General {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.Ingresos > section {
+    flex: 1;
+    padding: 10px;
+    background-color: #a8eca4;
+}
+
+/* Estilos para los elementos dentro de .Ingresos */
+.Ingresos section h3 {
+    margin-bottom: 15px;
+}
+
+.Ingresos section label, 
+.Ingresos section input, 
+.Ingresos section textarea, 
+.Ingresos section a {
+    display: block;
+    margin-bottom: 10px;
+    
+}
+#idNombre,#idEdad,#idTitulo,#idFecha,#idVisitante{
+    width: 100%;
+    height: 25px;
+}
+#idEstilo,#idDescripcion,#idComentario{
+    width: 100%;
+    height: 40px;
+}
+
+.Ingresos input[type="button"] {
+    margin-top: 10px;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+ul{
+    list-style: square;
+}
+table{
+
+border: 1px solid black;
+width: 100%;
+
+}
+td , th{
+    border:1px solid black;
+}
+thead{
+    background-color: white;
+    height: 50px;    
+}
