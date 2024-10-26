@@ -1,16 +1,20 @@
 /* Ignacio Badano (320966) - Franciso Morales (281497) */
 
 /* Estilos comunes */
-body{
+body {
   background-color: #ececf4;
 }
-.Museo-Del-Arte, .Ingresos, .Informacion-General {
+
+.Museo-Del-Arte,
+.Ingresos,
+.Informacion-General {
   background-color: rgb(152, 251, 152);
   margin: 0 auto;
   padding: 20px;
 }
 
-.Ingresos, .Informacion-General {
+.Ingresos,
+.Informacion-General {
   border-radius: 15px;
 }
 
@@ -31,32 +35,38 @@ body{
   margin-top: 20px;
 }
 
-.Ingresos > section {
+.Ingresos>article {
   flex: 1;
   padding: 10px;
   background-color: #a8eca4;
 }
 
 /* Estilos para los elementos dentro de .Ingresos */
-.Ingresos section h3 {
+.Ingresos article h3 {
   margin-bottom: 15px;
 }
 
-.Ingresos section label, 
-.Ingresos section input, 
-.Ingresos section textarea, 
-.Ingresos section a {
+.Ingresos article label,
+.Ingresos article input,
+.Ingresos article textarea,
+.Ingresos article a {
   display: block;
   margin-bottom: 10px;
-  
+
 }
 
-#idNombre,#idEdad,#idTitulo,#idFecha,#idVisitante{
+#idNombre,
+#idEdad,
+#idTitulo,
+#idFecha,
+#idVisitante {
   width: 100%;
   height: 25px;
 }
 
-#idEstilo,#idDescripcion,#idComentario{
+#idEstilo,
+#idDescripcion,
+#idComentario {
   width: 100%;
   height: 40px;
 }
@@ -71,23 +81,24 @@ img {
   display: inline-block;
 }
 
-ul{
+ul {
   list-style: square;
 }
 
-table{
-border: 1px solid black;
-width: 100%;
-text-align: center;
+table {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
 }
 
-td , th{
-  border:1px solid black;
+td,
+th {
+  border: 1px solid black;
 }
 
-thead{
+thead {
   background-color: white;
-  height: 50px;    
+  height: 50px;
 }
 
 .BotonVerde {
@@ -95,7 +106,11 @@ thead{
   color: white;
 }
 
-#idRojo,#idNaranja,#idAmarillo,#idVerdeLima,#idVerde {
+#idRojo,
+#idNaranja,
+#idAmarillo,
+#idVerdeLima,
+#idVerde {
   position: absolute;
   opacity: 0;
 }
@@ -103,3 +118,5 @@ thead{
 .Alinear {
   display: flex;
 }
+
+/* Mantener las dos líneas alrededor de toda la tabla */

@@ -21,11 +21,11 @@
       <a href="https://www.linkedin.com/in/francisco-morales-082588333/">Francisco Morales (281497)</a>
     </h4>
     <form id="idColores"></form>
-    <input type="button" form="#idColores" value="Colores">
+    <input type="button" id="idBotonColores" value="Colores">
   </header>
   <section class="Ingresos">
-    <section>
-      <h3>Ingresos</h3>
+    <h3>Ingresos</h3>
+    <article>
       <h3>Registrar Artistas</h3>
       <label for="idNombre">Nombre:</label>
       <input type="text" id="idNombre" name="nombre">
@@ -34,8 +34,8 @@
       <label for="idEstilo">Estilo:</label>
       <textarea rows="2" id="idEstilo" name="estilo"></textarea>
       <input type="button" class="BotonVerde" value="Agregar Artista">
-    </section>
-    <section>
+    </article>
+    <article>
       <h3>Ingresar Exposiciones</h3>
       <label for="idTitulo">Titulo:</label>
       <input type="text" id="idTitulo" name="titulo">
@@ -43,7 +43,7 @@
       <input type="date" id="idFecha" name="fecha">
       <label for="idDescripcion">Descripcion:</label>
       <textarea rows="2" id="idDescripcion" name="descripcion"></textarea>
-      <section>
+      <div>
         <label>Elegir artista:</label>
         <select id="idElegir" size="5" name="elegir">
           <option>Nombre 1</option>
@@ -52,42 +52,44 @@
         </select>
         <input type="button" value=">>" name="derecha">
         <input type="button" value="<<" name="izquierda">
-        <select id="idElegir" size="5" name="elegir2">
+        <select id="idElegir2" size="5" name="elegir2">
           <option>Nombre 4</option>
           <option>Nombre 5</option>
         </select>
-      </section>
-      <section>
+      </div>
+      <div>
         <input type="button" class="BotonVerde" value="Agregar Exposicion" name="agregar">
-      </section>
-    </section>
-    <section>
+      </div>
+    </article>
+    <article>
       <h3>Comentarios de Visitas</h3>
-      <label for="idExposicion">Exposicion</label>
+      <label>Exposicion</label>
       <select id="idExposicion" name="exposicion">
         <option>Titulo 1</option>
       </select>
-      <label for="idVisitante">Nombre del visitante:</label>
+      <label>Nombre del visitante:</label>
       <input type="text" id="idVisitante" name="visitante">
-      <label for="idComentario">Comentario:</label>
+      <label>Comentario:</label>
       <textarea id="idComentario" rows="2" name="comentario"></textarea>
-      <label for="idClasificacion">Clasificacion:</label>
+      <label>Clasificacion:</label>
 
 
-      <article class="Alinear">
-        <input id="idRojo" type="radio" name="color" checked><label for="#idRojo"><img src="img/Rojo.jpeg"></label>
-        <input id="idNaranja" type="radio" name="color" checked><label for="#idNaranja"><img
-            src="img/Naranja.jpeg"></label>
-        <input id="idAmarillo" type="radio" name="color" checked><label for="#idAmarillo"><img
-            src="img/Amarillo.jpeg"></label>
-        <input id="idVerdeLima" type="radio" name="color" checked><label for="#idVerdeLima"><img
-            src="img/Lima.jpeg"></label>
-        <input id="idVerde" type="radio" name="color" checked><label for="#idVerde"><img src="img/Verde.jpeg"></label>
-      </article>
+      <div class="Alinear">
+        <input id="idRojo" type="radio" name="color" checked><label><img src="img/Rojo.jpeg"
+            alt="Cara Roja Muy Triste"></label>
+        <input id="idNaranja" type="radio" name="color" checked><label><img src="img/Naranja.jpeg"
+            alt="Cara Naranja Triste"></label>
+        <input id="idAmarillo" type="radio" name="color" checked><label><img src="img/Amarillo.jpeg"
+            alt="Cara Amarilla Seria"></label>
+        <input id="idVerdeLima" type="radio" name="color" checked><label><img src="img/Lima.jpeg"
+            alt="Cara Verde Lima Feliz"></label>
+        <input id="idVerde" type="radio" name="color" checked><label><img src="img/Verde.jpeg"
+            alt="Cara Verde Muy Feliz"></label>
+        </div>
 
-      <input id="idVisita" type="radio" name="visita"><label id="idVisita">Hice visita guiada</label>
+      <input id="idVisita" type="radio" name="visita"><label>Hice visita guiada</label>
       <input type="button" class="BotonVerde" value="Agregar Comentario" name="comentario">
-    </section>
+    </article>
   </section>
   <section class="Informacion-General">
     <h3>Informacion General</h3>
@@ -102,8 +104,8 @@
       <li>Datos ficticios 2</li>
     </ul>
     <h3>Informacion de Comentarios</h3>
-    <label for="idExposicion">Exposicion:</label>
-    <select id="idExposicion" name="exposicion">
+    <label>Exposicion:</label>
+    <select id="idExposicion2" name="exposicion">
       <option>Todas</option>
     </select>
     <table>
@@ -124,7 +126,7 @@
           <td>Nombre ficticio 1</td>
           <td>Comentario ficticio 1</td>
           <td>NO</td>
-          <td><img src="img/Rojo.jpeg"></td>
+          <td><img src="img/Rojo.jpeg" alt="Cara Roja Muy Triste"></td>
         </tr>
         <tr>
           <td>Titulo 2</td>
@@ -132,7 +134,7 @@
           <td>Nombre ficticio 2</td>
           <td>Comentario ficticio 2</td>
           <td>SI</td>
-          <td><img src="img/Verde.jpeg"></td>
+          <td><img src="img/Verde.jpeg" alt="Cara Verde Muy Feliz"></td>
         </tr>
       </tbody>
     </table>
