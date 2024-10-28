@@ -1,8 +1,9 @@
 /* Ignacio Badano (320966) - Franciso Morales (281497) */
 
-/* Estilos comunes */
+/* Estilos comunes, le agregue lo de margin*/
 body {
   background-color: #ececf4;
+  margin: 0;
 }
 
 .Museo-Del-Arte,
@@ -13,21 +14,45 @@ body {
   padding: 20px;
 }
 
-.Ingresos,
-.Informacion-General {
+/* Mantén el resto del diseño intacto, se mantuvo border-radius, lo demas es nuevo */
+.Ingresos, .Informacion-General {
+  background-color: rgb(152, 251, 152);
   border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
+/* Ajusta el header para que ocupe todo el ancho y deje espacio debajo, se mantuvo el text-aling: center */
 .Museo-Del-Arte {
+  width: 100%;
+  background-color: rgb(152, 251, 152);
   text-align: center;
+  padding: 20px;
+  margin-bottom: 20px; /* Agrega margen inferior para separar del section */
 }
 
 .Ingresos {
   width: 90%;
   margin-top: 15px;
+  background-color: rgb(152, 251, 152);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/*Esto es nuevo para separar Ingresos con los articule */
+.contenedor-articulos {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+/*Esto es para mantener el disenio de articule */
+.contenedor-articulos > article {
+  flex: 1;
+  padding: 10px;
+  background-color: #a8eca4;
+  border-radius: 10px;
 }
 
 .Informacion-General {
@@ -120,3 +145,4 @@ thead {
 }
 
 /* Mantener las dos líneas alrededor de toda la tabla */
+
