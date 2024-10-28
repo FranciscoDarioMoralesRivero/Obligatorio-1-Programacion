@@ -1,0 +1,171 @@
+/* Ignacio Badano (320966) - Franciso Morales (281497) */
+
+/* Estilos comunes, le agregue lo de margin*/
+body {
+    background-color: #ececf4;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .Museo-Del-Arte,
+  .Ingresos,
+  .Informacion-General {
+    background-color: rgb(152, 251, 152);
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Mantén el resto del diseño intacto, se mantuvo border-radius, lo demas es nuevo */
+  .Ingresos, .Informacion-General {
+    background-color: rgb(152, 251, 152);
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Ajusta el header para que ocupe todo el ancho y deje espacio debajo, se mantuvo el text-aling: center */
+  .Museo-Del-Arte {
+    width: 100%;
+    background-color: rgb(152, 251, 152);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px; /* Agrega margen inferior para separar del section */
+  }
+  
+  .Ingresos {
+    width: 90%;
+    margin-top: 15px;
+    background-color: rgb(152, 251, 152);
+    border-radius: 15px;
+    padding: 20px;
+  }
+  
+  /*Esto es nuevo para separar Ingresos con los articule */
+  .contenedor-articulos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /*Esto es para mantener el disenio de articule */
+  .contenedor-articulos > article {
+    flex: 1;
+    padding: 10px;
+    background-color: #a8eca4;
+    border-radius: 10px;
+  }
+  
+  .Informacion-General {
+    width: 80%;
+    margin-top: 20px;
+  }
+  
+  .Ingresos>article {
+    flex: 1;
+    padding: 10px;
+    background-color: #a8eca4;
+  }
+  
+  /* Estilos para los elementos dentro de .Ingresos */
+  .Ingresos article h3 {
+    margin-bottom: 15px;
+  }
+  
+  .Ingresos article label,
+  .Ingresos article input,
+  .Ingresos article textarea,
+  .Ingresos article a {
+    display: block;
+    margin-bottom: 10px;
+  
+  }
+  
+  #idNombre,
+  #idEdad,
+  #idTitulo,
+  #idFecha,
+  #idVisitante {
+    width: 100%;
+    height: 25px;
+  }
+  
+  #idEstilo,
+  #idDescripcion,
+  #idComentario {
+    width: 100%;
+    height: 40px;
+  }
+  
+  .Ingresos input[type="button"] {
+    margin-top: 10px;
+  }
+  
+  img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+  
+  ul {
+    list-style: square;
+  }
+  
+  table {
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+  }
+  
+  td,
+  th {
+    border: 1px solid black;
+  }
+  
+  thead {
+    background-color: white;
+    height: 50px;
+  }
+  
+  .BotonVerde {
+    background-color: green;
+    color: white;
+  }
+  
+  #idRojo,
+  #idNaranja,
+  #idAmarillo,
+  #idVerdeLima,
+  #idVerde {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .Alinear {
+    display: flex;
+  }
+  img{
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BotonVerde {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        border: #4CAF50;
+        height: 30px;
+      }
+
+  /* Mantener las dos líneas alrededor de toda la tabla */
+  .Tabla-Artista, .Visita-Guiada{
+    display: flex;
+  }
+  .Exposicion-Todas{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 50px;
+  }
+  .Botones-Expocicion input{
+    display: flex;
+  }
