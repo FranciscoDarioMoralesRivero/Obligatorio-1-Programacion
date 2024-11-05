@@ -1,0 +1,3 @@
+class registrarartista{
+    constructor
+}
