@@ -14,11 +14,12 @@ class Artista {
 
 class Exposicion {
 
-    constructor(titulo, fecha, descripcion) {
+    constructor(titulo, fecha, descripcion,listaArtista) {
 
         this.titulo = titulo;
         this.fecha = fecha;
         this.descripcion = descripcion;
+        this.listaArtista=listaArtista;
     }
 }
 
@@ -57,8 +58,24 @@ class Sistema {
         return existe;
     }
 
-    agregarExposicion(titulo, fecha, descripcion) {
-        let objExposicion = new Exposicion(titulo, fecha, descripcion)
+    buscarArtista(elNombre) {  // Verifica si un artista con el nombre dado ya existe en la lista.
+        let artista = null;
+        for (let e of this.listaArtista) {
+            if (e.nombre === elNombre) {  // Compara el nombre del artista actual con el nombre buscado.
+                artista = e;
+            }
+        }
+        return artista;
+    }
+    agregarExposicion(titulo, fecha, descripcion,listaArtista) {
+        
+        let listaObjetoArtista=[]
+        for(let i=0;i<listaArtista.length;i++){
+            let nombreArtista =listaArtista[i];
+            let artista=this.buscarArtista(nombreArtista);
+            listaObjetoArtista.push(artista);
+        }
+        let objExposicion = new Exposicion(titulo, fecha, descripcion,listaObjetoArtista)
         this.listaExposiciones.push(objExposicion);
     }
 

@@ -1,12 +1,13 @@
 window.addEventListener("load", setup);
 /*Comprobar funcionalidades*/
 let misistema = new Sistema();
-
+let listaSelecionada=[];
 function setup() {
     document.getElementById("BotonColores").addEventListener("click", CambiarColor);
     document.getElementById("BotonAltaArtista").addEventListener("click", AltaArtistas);
     document.getElementById("BotonAltaExpocicion").addEventListener("click", AltaExposicion);
     document.getElementById("BotonAltaComentario").addEventListener("click", AltaComentario);
+    document.getElementById("derecha").addEventListener("click",altaListaArtista);
 }
 
 function CambiarColor() {
@@ -41,12 +42,24 @@ function AltaArtistas() {
         } else {
             misistema.agregarArtista(nombre, edad, caracteristicas)
             alert("Alta Artistas")
-            // ActualizarListaArtista();
+            ActualizarListaArtista();
             form.reset();
         }
     }
 }
+function ActualizarListaArtista(){
+    
+    let objLista=document.getElementById("idElegir")
+    objLista.innerHTML = "";
 
+    for(let artista of misistema.listaArtista){
+        let objOpcion=document.createElement("option");
+
+        objOpcion.textContent=artista.nombre
+        objOpcion.value = artista.nombre
+        objLista.appendChild(objOpcion)
+    }
+}
 
 function AltaExposicion() {
     let form = document.getElementById("IngresarExposicionesForm");
@@ -54,12 +67,22 @@ function AltaExposicion() {
         let titulo = document.getElementById("idTitulo").value;
         let comienzo = document.getElementById("idFecha").value;
         let descripcion = document.getElementById("idDescripcion").value;
-        if (misistema.existeExposicion(titulo)) {
-            alert("Ya existe esta Exposicion")
-        } else {
-            misistema.agregarExposicion(titulo, comienzo, descripcion)
-            alert("Alta Exposiciones")
-            form.reset();
+        
+        if(listaSelecionada.length>0)
+        {
+            if (misistema.existeExposicion(titulo)) {
+                alert("Ya existe esta Exposicion")
+            } else {
+                misistema.agregarExposicion(titulo, comienzo, descripcion,listaSelecionada)
+                alert("Alta Exposiciones")
+                form.reset();
+                listaSelecionada=[]
+                document.getElementById("idElegir2").innerHTML="";
+                ActualizarListaArtista();
+            }
+        }
+        else{
+            alert("Debe seleccionar por lo menos un artista")
         }
     }
 }
@@ -71,12 +94,50 @@ function AltaComentario() {
         let visitante = document.getElementById("idVisitante").value;
         let comentario = document.getElementById("idComentario").value;
         let visita = document.getElementById("idVisita").value;
-        if (misistema.existeExposicion(visitante)) {
+        if (misistema.existeComentario(visitante)) {
             alert("Ya ingreso comentario este visitante")
         } else {
-            misistema.agregarExposicion(exposicion, visitante, comentario, visita)
+            let carita=document.getElementsByName("color");
+            alert(carita.value)
+            misistema.agregarComentario(exposicion, visitante, comentario, visita)
             alert("Alta Comentarios")
             form.reset();
         }
     }
 }
+
+function altaListaArtista()
+{
+
+
+    let listaArtista=document.getElementById("idElegir");
+    let itemArtista=listaArtista.value;
+
+    if(itemArtista!="")
+    {
+    let selectSeleccionada=document.getElementById("idElegir2");
+    let item=document.createElement("option");
+    item.textContent=itemArtista
+    item.value = itemArtista
+    selectSeleccionada.appendChild(item)
+    listaSelecionada.push(itemArtista);
+
+    let objLista=document.getElementById("idElegir")
+    objLista.innerHTML = "";
+
+    for(let artista of misistema.listaArtista){
+        if(listaSelecionada.indexOf(artista.nombre)==-1)
+        {
+            let objOpcion=document.createElement("option");
+
+            objOpcion.textContent=artista.nombre
+            objOpcion.value = artista.nombre
+            objLista.appendChild(objOpcion)
+        }
+    }
+}
+else{
+    alert("Seleccione un artista")
+}
+
+}//Para retornar Como en El ejemplo usaba mi sistema aca usar ListaSelecionada
