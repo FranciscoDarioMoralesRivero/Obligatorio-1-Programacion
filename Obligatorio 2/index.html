@@ -1,0 +1,135 @@
+<!--Ignacio Badano (320966) - Franciso Morales (281497)-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obligatorio 1</title>
+  <link rel="stylesheet" href="estilos.css/estilos.css">
+  <script src="clases.js/clases.js"></script>
+  <script src="funciones.js/funciones.js"></script>
+
+
+</head>
+
+<body>
+  <header class="Museo-Del-Arte" id="idCambioMuseo">
+    <h1>Museo de Arte</h1>
+    <h4>Trabajo realizado por <a href="https://www.linkedin.com/in/ignacio-badano-silva-02939026b/">Ignacio Badano
+        (320966)</a>
+      <a>y</a>
+      <a href="https://www.linkedin.com/in/francisco-morales-082588333/">Francisco Morales (281497)</a>
+    </h4>
+    <form id="idColores"></form>
+    <input type="button" id="idBotonColores" value="Colores">
+  </header>
+  <section class="Ingresos" id="idCambioIngresos">
+    <h3>Ingresos</h3>
+    <div class="contenedor-articulos">
+      <article>
+        <h3>Registrar Artistas</h3>
+        <form id="idRegistrarArtistaForm">
+          <label for="idNombre">Nombre:</label>
+          <input type="text" id="idNombre" name="nombre" required>
+          <label for="idEdad">Edad:</label>
+          <input type="text" id="idEdad" name="edad" required>
+          <label for="idEstilo">Características del estilo:</label>
+          <textarea rows="2" id="idEstilo" name="estilo" required></textarea>
+          <input type="button" class="BotonVerde" id="idBotonAltaArtista" value="Agregar Artista">
+        </form>
+      </article>
+      <article>
+        <h3>Ingresar Exposiciones</h3>
+        <form id="IngresarExposicionesForm">
+          <label for="idTitulo">Título:</label>
+          <input type="text" id="idTitulo" name="titulo" required>
+          <label for="idFecha">Fecha de comienzo:</label>
+          <input type="date" id="idFecha" name="fecha" required>
+          <label for="idDescripcion">Descripción:</label>
+          <textarea rows="2" id="idDescripcion" name="descripcion" required></textarea>
+          <div class="Tabla-Artista">
+            <label>Elegir artista:</label>
+            <select id="idElegir" size="5" name="elegir">
+            </select>
+
+            <input type="button" value=">>" id="idDerecha" name="derecha">
+            <input type="button" value="<<" id="idIzquierda" name="izquierda">
+            <select id="idElegir2" size="5" name="elegir2">
+            </select>
+          </div>
+          <div>
+            <input type="button" class="BotonVerde" id="idBotonAltaExposicion" value="Agregar Exposición"
+              name="agregar">
+          </div>
+        </form>
+      </article>
+      <article>
+        <h3>Comentarios de Visitas</h3>
+        <form id="idComentariosVisitasForm">
+          <label>Exposición</label>
+          <select id="idComboExposicion" name="exposicion" required>
+          </select> 
+          <label>Nombre del visitante:</label>
+          <input type="text" id="idVisitante" name="visitante" required>
+          <label>Comentario:</label>
+          <textarea id="idComentario" rows="2" name="comentario" required></textarea>
+          <label>Calificación:</label>
+
+
+          <div class="Alinear">
+            <input id="idRojo" type="radio" name="color" value="Muy Malo" checked><label for="idRojo"><img
+                src="img/Rojo.jpeg" alt="Cara Roja Muy Triste"></label>
+
+            <input id="idNaranja" type="radio" name="color" value="Malo"><label for="idNaranja"><img
+                src="img/Naranja.jpeg" alt="Cara Naranja Triste"></label>
+
+            <input id="idAmarillo" type="radio" name="color" value="Neutral"><label for="idAmarillo"><img
+                src="img/Amarillo.jpeg" alt="Cara Amarilla Seria"></label>
+
+            <input id="idVerdeLima" type="radio" name="color" value="Bueno"><label for="idVerdeLima"><img
+                src="img/Lima.jpeg" alt="Cara Verde Lima Feliz"></label>
+
+            <input id="idVerde" type="radio" name="color" value="Muy Bueno"><label for="idVerde"><img
+                src="img/Verde.jpeg" alt="Cara Verde Muy Feliz"></label>
+          </div>
+
+          <div class="Visita-Guiada">
+            <input id="idVisita" type="radio" name="visita"><label>Hice visita guiada</label>
+          </div>
+          <input type="button" class="BotonVerde" id="idBotonAltaComentario" value="Agregar Comentario"
+            name="comentario">
+      </article>
+    </div>
+    </form>
+  </section>
+  <section class="Informacion-General" id="idCambioInfo">
+    <h3>Información General</h3>
+    <p>Título de la/s Exposición/es con más artistas:</p>
+    <ul id="idMasArtistas">
+      <li>Sin datos</li>
+    </ul>
+    <p>Título y fecha de la/s Exposiciones sin comentarios: (ordenadas por fecha creciente)</p>
+    <ul id="idSinComentarios">
+      <li>Sin datos</li>
+    </ul>
+    <h3>Informacion de Comentarios</h3>
+    <div class="Exposicion-Todas">
+      <label>Exposición:</label>
+      <select id="idExposicion2" name="exposicion">
+        <option>Todas</option>
+      </select>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th><th>Más datos</th><th>Nombre</th><th>Comentario</th><th>Guiada</th><th><input type="button" class="BotonVerde" value="Calificación creciente" name="creciente"></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
+</body>
