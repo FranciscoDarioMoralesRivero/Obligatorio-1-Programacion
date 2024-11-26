@@ -14,12 +14,12 @@ class Artista {
 
 class Exposicion {
 
-  constructor(titulo, fecha, descripcion, elegir) {
+  constructor(titulo, fecha, descripcion, listaArtista) {
 
     this.titulo = titulo;
     this.fecha = fecha;
     this.descripcion = descripcion;
-    this.listaArtista = elegir;
+    this.listaArtista = listaArtista;
   }
 }
 
@@ -68,17 +68,14 @@ class Sistema {
     return artista;
   }
 
-  agregarExposicion(titulo, fecha, descripcion, listaSeleccionada) {
+  agregarExposicion(titulo, fecha, descripcion, listaArtista) {
 
     let listaObjetoArtista = [];
-    for (let i = 0; i < listaSeleccionada.length; i++) {
-      let nombreArtista = listaSeleccionada[i];
+    for (let i = 0; i < listaArtista.length; i++) {
+      let nombreArtista = listaArtista[i];
       let artista = this.buscarArtista(nombreArtista);
-      if (artista) {
-        listaObjetoArtista.push(artista);
-      }
+      listaObjetoArtista.push(artista);
     }
-
     let objExposicion = new Exposicion(titulo, fecha, descripcion, listaObjetoArtista);
     this.listaExposiciones.push(objExposicion);
   }

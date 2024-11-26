@@ -15,6 +15,7 @@ function cambiarColor() {
   let cambiarColor1 = document.getElementById("idCambioMuseo");
   let cambiarColor2 = document.getElementById("idCambioIngresos");
   let cambiarColor3 = document.getElementById("idCambioInfo");
+
   let colorPrincipal = "rgb(152, 251, 152)";
   let colorAlterno = "#A4D28C";
 
@@ -31,6 +32,8 @@ function cambiarColor() {
   }
 }
 
+// Form Artistas Inicio
+
 function altaArtistas() {
   let form = document.getElementById("idRegistrarArtistaForm");
   if (form.reportValidity()) {
@@ -40,8 +43,8 @@ function altaArtistas() {
     if (misistema.existeArtista(nombre)) {
       alert("Ya existe este artista");
     } else {
-      misistema.agregarArtista(nombre, parseInt(edad), caracteristicas);
-      alert("Artista agregado");
+      misistema.agregarArtista(nombre, edad, caracteristicas);
+      alert("Alta Artistas");
       actualizarListaArtista();
       form.reset();
     }
@@ -50,29 +53,32 @@ function altaArtistas() {
 
 function actualizarListaArtista() {
 
-  let objLista = document.getElementById("idElegir")
+  let objLista = document.getElementById("idElegir");
   objLista.innerHTML = "";
 
   for (let artista of misistema.listaArtista) {
     let objOpcion = document.createElement("option");
+
     objOpcion.textContent = artista.nombre;
     objOpcion.value = artista.nombre;
     objLista.appendChild(objOpcion);
   }
 }
+// Form Artistas Final
 
 function altaExposicion() {
-  let form = document.getElementById("IngresarExposicionesForm");
+  let form = document.getElementById("idIngresarExposicionesForm");
   if (form.reportValidity()) {
-    let titulo = document.getElementById("idTitulo").value.trim();
+    let titulo = document.getElementById("idTitulo").value;
     let comienzo = document.getElementById("idFecha").value;
-    let descripcion = document.getElementById("idDescripcion").value.trim();
+    let descripcion = document.getElementById("idDescripcion").value;
+
     if (listaSeleccionada.length > 0) {
       if (misistema.existeExposicion(titulo)) {
         alert("Ya existe esta exposición.");
       } else {
         misistema.agregarExposicion(titulo, comienzo, descripcion, listaSeleccionada);
-        alert("Exposición agregada con éxito.");
+        alert("Alta Exposiciones");
         form.reset();
         listaSeleccionada = [];
         document.getElementById("idElegir2").innerHTML = "";
@@ -90,78 +96,105 @@ function altaExposicion() {
 
 
 function actualizarExposicionEnCombo() {
-  let objExposicion = document.getElementById("idComboExposicion");
-  objExposicion.innerHTML = ""; // Limpiar opciones previas
+  let objExposicion = document.getElementById("idExposicion");
+  objExposicion.innerHTML = "";
 
   for (let exp of misistema.listaExposiciones) {
-    // Crear un elemento <option>
     let opcion = document.createElement("option");
-    opcion.textContent = exp.titulo; // Mostrar el título de la exposición
-    opcion.value = exp.titulo; // Valor opcional si es necesario
-    objExposicion.appendChild(opcion); // Agregar al select
+    opcion.textContent = exp.titulo;
+    opcion.value = exp.titulo;
+    objExposicion.appendChild(opcion);
   }
 }
 
+function altaListaArtista() {
+
+  let listaArtista = document.getElementById("idElegir");
+  let itemArtista = listaArtista.value;
+
+  if (itemArtista != "") {
+    let selectSeleccionada = document.getElementById("idElegir2");
+    let item = document.createElement("option");
+    item.textContent = itemArtista
+    item.value = itemArtista
+    selectSeleccionada.appendChild(item)
+    listaSeleccionada.push(itemArtista);
+
+    let objLista = document.getElementById("idElegir")
+    objLista.innerHTML = "";
+
+    for (let artista of misistema.listaArtista) {
+      if (listaSeleccionada.indexOf(artista.nombre) == -1) {
+        let objOpcion = document.createElement("option");
+
+        objOpcion.textContent = artista.nombre
+        objOpcion.value = artista.nombre
+        objLista.appendChild(objOpcion)
+      }
+    }
+  }
+  else {
+    alert("Seleccione un artista")
+  }
+}//Para retornar Como en El ejemplo usaba mi sistema aca usar ListaSelecionada
 
 function altaComentario() {
   let form = document.getElementById("idComentariosVisitasForm");
   if (form.reportValidity()) {
-    let exposicion = document.getElementById("idComboExposicion").value;
-    let visitante = document.getElementById("idVisitante").value.trim();
-    let comentario = document.getElementById("idComentario").value.trim();
+    let exposicion = document.getElementById("idExposicion").value;
+    let visitante = document.getElementById("idVisitante").value;
+    let comentario = document.getElementById("idComentario").value;
     let visita = document.getElementById("idVisita").checked ? "Sí" : "No";
+
     let calificacion = "";
     let radios = document.getElementsByName("color");
     for (let radio of radios) {
       if (radio.checked) {
         calificacion = radio.value;
-        break;
       }
     }
+
     if (misistema.existeComentario(visitante)) {
       alert("Ya ingresó comentario este visitante");
     } else {
       misistema.agregarComentario(exposicion, visitante, comentario, calificacion, visita);
-      alert("Comentario agregado con éxito");
+      alert("Alta Comentarios");
       form.reset();
       actualizarSinComentarios();
+      exposicionInfoComentarios();
     }
   }
 }
 
 function actualizarMasArtistas() {
-  // Obtener el elemento HTML para mostrar el resultado
   let listaMasArtistas = document.getElementById("idMasArtistas");
-  listaMasArtistas.innerHTML = ""; // Limpia la lista actual
+  listaMasArtistas.innerHTML = "";
 
-  // Verifica si hay exposiciones en el sistema
   if (misistema.listaExposiciones.length === 0) {
-      let item = document.createElement("li");
-      item.textContent = "Sin datos";
-      listaMasArtistas.appendChild(item);
-      return;
+    let item = document.createElement("li");
+    item.textContent = "Sin datos";
+    listaMasArtistas.appendChild(item);
+    return;
   }
 
-  // Determinar la máxima cantidad de artistas
   let maxArtistas = 0;
   let exposicionesMaximas = [];
 
   for (let expo of misistema.listaExposiciones) {
-      let cantidadArtistas = expo.listaArtista.length;
+    let cantidadArtistas = expo.listaArtista.length;
 
-      if (cantidadArtistas > maxArtistas) {
-          maxArtistas = cantidadArtistas;
-          exposicionesMaximas = [expo.titulo]; // Nueva lista con esta exposición
-      } else if (cantidadArtistas === maxArtistas) {
-          exposicionesMaximas.push(expo.titulo); // Agrega exposición con misma cantidad
-      }
+    if (cantidadArtistas > maxArtistas) {
+      maxArtistas = cantidadArtistas;
+      exposicionesMaximas = [expo.titulo];
+    } else if (cantidadArtistas === maxArtistas) {
+      exposicionesMaximas.push(expo.titulo);
+    }
   }
 
-  // Actualizar el HTML con los títulos de las exposiciones con más artistas
   for (let titulo of exposicionesMaximas) {
-      let item = document.createElement("li");
-      item.textContent = titulo;
-      listaMasArtistas.appendChild(item);
+    let item = document.createElement("li");
+    item.textContent = titulo;
+    listaMasArtistas.appendChild(item);
   }
 }
 
@@ -184,40 +217,29 @@ function actualizarSinComentarios() {
 
   // Actualizar la lista en el HTML
   for (let exp of exposicionesSinComentarios) {
-    let item = document.createElement("li");
-    item.textContent = `${exp.titulo} - ${exp.fecha}`;
-    listaSinComentarios.appendChild(item);
+    let li = document.createElement("li");
+    li.textContent = `${exp.titulo} - ${exp.fecha}`;
+    listaSinComentarios.appendChild(li);
   }
 
   // Si no hay exposiciones sin comentarios, mostrar un mensajes
   if (exposicionesSinComentarios.length === 0) {
-    let item = document.createElement("li");
-    item.textContent = "Sin datos";
-    listaSinComentarios.appendChild(item);
+    let li = document.createElement("li");
+    li.textContent = "Sin datos";
+    listaSinComentarios.appendChild(li);
   }
 }
 
-function altaListaArtista() {
-  let listaArtista = document.getElementById("idElegir");
-  let itemSeleccionado = listaArtista.options[listaArtista.selectedIndex]; // Obtiene la opción seleccionada
+function exposicionInfoComentarios() {
+  let objExposicion2 = document.getElementById("idExposicion2");
+  objExposicion2.innerHTML = "<option>Todas</option>";
 
-  if (itemSeleccionado) {
-      let valorArtista = itemSeleccionado.value;
-
-      // Mover al segundo select
-      let selectSeleccionada = document.getElementById("idElegir2");
-      let nuevaOpcion = document.createElement("option");
-      nuevaOpcion.textContent = valorArtista;
-      nuevaOpcion.value = valorArtista;
-      selectSeleccionada.appendChild(nuevaOpcion);
-
-      // Actualizar lista seleccionada
-      listaSeleccionada.push(valorArtista);
-
-      // Eliminar del primer select
-      listaArtista.removeChild(itemSeleccionado);
-  } else {
-      alert("Seleccione un artista válido");
+  for (let opt of misistema.listaComentarios) {
+    let opcion = document.createElement("option");
+    opcion.textContent = opt.titulo;
+    opcion.value = opt.titulo;
+    objExposicion2.appendChild(opcion);
   }
 }
+
 

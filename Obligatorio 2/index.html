@@ -7,7 +7,7 @@
 
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obligatorio 1</title>
+  <title>Obligatorio 2</title>
   <link rel="stylesheet" href="estilos.css/estilos.css">
   <script src="clases.js/clases.js"></script>
   <script src="funciones.js/funciones.js"></script>
@@ -43,7 +43,7 @@
       </article>
       <article>
         <h3>Ingresar Exposiciones</h3>
-        <form id="IngresarExposicionesForm">
+        <form id="idIngresarExposicionesForm">
           <label for="idTitulo">Título:</label>
           <input type="text" id="idTitulo" name="titulo" required>
           <label for="idFecha">Fecha de comienzo:</label>
@@ -70,8 +70,8 @@
         <h3>Comentarios de Visitas</h3>
         <form id="idComentariosVisitasForm">
           <label>Exposición</label>
-          <select id="idComboExposicion" name="exposicion" required>
-          </select> 
+          <select id="idExposicion" name="exposicion" required>
+          </select>
           <label>Nombre del visitante:</label>
           <input type="text" id="idVisitante" name="visitante" required>
           <label>Comentario:</label>
@@ -122,10 +122,15 @@
         <option>Todas</option>
       </select>
     </div>
-    <table>
+    <table id="idTabla">
       <thead>
         <tr>
-          <th>Título</th><th>Más datos</th><th>Nombre</th><th>Comentario</th><th>Guiada</th><th><input type="button" class="BotonVerde" value="Calificación creciente" name="creciente"></th>
+          <th>Título</th>
+          <th>Más datos</th>
+          <th>Nombre</th>
+          <th>Comentario</th>
+          <th>Guiada</th>
+          <th><input type="button" class="BotonVerde" value="Calificación creciente" name="creciente"></th>
         </tr>
       </thead>
       <tbody>
